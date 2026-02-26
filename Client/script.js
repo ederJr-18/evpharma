@@ -41,11 +41,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         spans[2].style.transform = 'none';
 
         const target = document.querySelector(this.getAttribute('href'));
-        if(target) {
+        if(target && target.id !== 'contactModal') {
             window.scrollTo({
                 top: target.offsetTop - 80,
                 behavior: 'smooth'
             });
         }
     });
+});
+
+// Modal Logic
+const modal = document.getElementById('contactModal');
+const btnContact = document.getElementById('contactBtn');
+const spansClose = document.getElementsByClassName('close-btn')[0];
+
+if (btnContact && modal) {
+    btnContact.onclick = function(e) {
+        e.preventDefault();
+        modal.classList.add('show');
+    }
+}
+
+if (spansClose && modal) {
+    spansClose.onclick = function() {
+        modal.classList.remove('show');
+    }
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.classList.remove('show');
+    }
+}
+
+document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Mensaje enviado. ¡Nos pondremos en contacto pronto!');
+    modal.classList.remove('show');
+    this.reset();
 });
