@@ -20,9 +20,9 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="#inicio" class="active">Inicio</a></li>
-                <li><a href="#Productos">Productos</a></li>
+                <li><a href="productos.html">Productos</a></li>
                 <li><a href="quienesSomos.html">Quiénes somos</a></li>
-                <li><a href="#referencias">Referencias</a></li>
+                <li><a href="referencias.html">Referencias</a></li>
                 <li><a href="#contacto" class="btn-contact">Contacto</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -36,12 +36,11 @@
     <main>
         <section id="inicio" class="hero">
             <div class="hero-content">
-                <span class="badge">Atención Famaceutica Integral</span>
+                <span class="badge">Atención Farmacéutica Integral</span>
                 <h1>Un servicio <br><span class="highlight">completo</span></h1>
-                <p>En <strong>EV PHARMA</strong>, nuestro objetivo es que adquieras la mejor atención y calidad. Nos enfocamos en tu bienestar integral con la venta de medicamentos y maquinaria con excelentes standares en la industria.</p>
+                <p>En <strong>EV PHARMA</strong>, nuestro objetivo es que adquieras la mejor atención y calidad. Nos enfocamos en tu bienestar integral con la venta de medicamentos y maquinaria con excelentes estándares en la industria.</p>
                 <div class="cta-group">
-                    <a href="#Productos" class="btn btn-primary">Conoce nuestros productos y servicios</a>
-                    
+                    <a href="productos.html" class="btn btn-primary">Conoce nuestros productos y servicios</a>
                 </div>
             </div>
             <div class="hero-image-container">
@@ -57,30 +56,9 @@
                 <div class="blob-bg"></div>
             </div>
         </section>
-
-        <!-- Placeholder Sections to show the layout structure -->
-        <section id="Productos" class="section bg-light">
-            <div class="container text-center">
-                <h2 class="section-title">Nuestros Productos</h2>
-                <p class="section-subtitle">Productos de salud diseñados para tu bienestar.</p>
-                <div class="grid-3">
-                    <div class="service-card">
-                        <div class="icon">💊</div>
-                        <h3>Farmacia</h3>
-                        <p>Las mejores referencias médicas y atención farmacéutica directa.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="icon">👨‍⚕️</div>
-                        <h3>Maquinaria</h3>
-                        <p>Maquinaria enfocada en la buena prestacion de la salud.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
     </main>
 
-    <footer>
+    <footer id="contacto">
         <div class="footer-content">
             <div class="logo">
                 <img src="images/LogoEVPharma-Picsart-BackgroundRemover.png" alt="EV Pharma Logo" class="logo-img">
@@ -93,6 +71,28 @@
         </div>
     </footer>
 
+    <!-- Modal de Contacto -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-btn">&times;</span>
+            <h2>Contáctanos</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
