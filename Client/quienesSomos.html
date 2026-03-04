@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="EV PHARMA S.A.S. - Quiénes Somos. Misión y Visión.">
     <title>EV PHARMA S.A.S | Quiénes Somos</title>
+    <meta name="description" content="EV PHARMA S.A.S. - Adquiere la mejor atención y calidad en servicios de salud.">
+    <title>Quiénes Somos | EV PHARMA S.A.S</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/LogoEVPharma-Picsart-BackgroundRemover.png"> 
@@ -24,6 +26,10 @@
                 <li><a href="quienesSomos.html" class="active">Quiénes somos</a></li>
                 <li><a href="index.html#referencias">Referencias</a></li>
                 <li><a href="index.html#contacto" class="btn-contact">Contacto</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="quienesSomos.html" class="active">Quiénes somos</a></li>
+                <li><a href="index.html#referencias">Referencias</a></li>
+                <li><a href="#contacto" id="contactBtn" class="btn-contact">Contacto</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -56,6 +62,13 @@
                         </div>
                     </div>
                 </div>
+    <main>
+        <section class="muy-pronto">
+            <div class="blob-bg"></div>
+            <h1>Muy <span class="highlight">pronto...</span></h1>
+            <p>Nuestra historia y valores estarán disponibles aquí pronto. ¡Mantente atento para conocer más sobre nosotros!</p>
+            <div style="margin-top: 2rem;">
+                <a href="index.html" class="btn btn-primary">Volver al inicio</a>
             </div>
         </section>
     </main>
@@ -72,6 +85,30 @@
             <p>&copy; 2026 EV PHARMA S.A.S. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Contáctanos</h2>
+            <p>Déjanos tu mensaje y nos comunicaremos contigo.</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
