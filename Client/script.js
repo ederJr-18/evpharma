@@ -46,7 +46,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         spans[2].style.transform = 'none';
 
         const target = document.querySelector(this.getAttribute('href'));
-        if(target) {
+        if(target && target.id !== 'contactModal') {
             window.scrollTo({
                 top: target.offsetTop - 80,
                 behavior: 'smooth'
@@ -55,39 +55,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact modal logic
-const contactBtns = document.querySelectorAll('.btn-contact');
-const contactModal = document.getElementById('contactModal');
-let closeBtn = null;
+// Modal Logic
+const modal = document.getElementById('contactModal');
+const btnContact = document.getElementById('contactBtn');
+const spansClose = document.getElementsByClassName('close-btn')[0];
 
-if (contactModal) {
-    closeBtn = contactModal.querySelector('.close-btn');
-
-    contactBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            contactModal.classList.add('show');
-        });
-    });
-
-    closeBtn.addEventListener('click', () => {
-        contactModal.classList.remove('show');
-    });
-
-    window.addEventListener('click', (e) => {
-        if (e.target === contactModal) {
-            contactModal.classList.remove('show');
-        }
-    });
-
-    // Handle form submission without reloading page
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.');
-            contactModal.classList.remove('show');
-            contactForm.reset();
-        });
+if (btnContact && modal) {
+    btnContact.onclick = function(e) {
+        e.preventDefault();
+        modal.classList.add('show');
     }
 }
+
+if (spansClose && modal) {
+    spansClose.onclick = function() {
+        modal.classList.remove('show');
+    }
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.classList.remove('show');
+    }
+}
+
+document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Mensaje enviado. ¡Nos pondremos en contacto pronto!');
+    modal.classList.remove('show');
+    this.reset();
+});
