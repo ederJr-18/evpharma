@@ -31,6 +31,11 @@ hamburger.addEventListener('click', () => {
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        if(this.classList.contains('btn-contact')) {
+            e.preventDefault(); // <-- Fix: We must prevent default here so it doesn't navigate to #contacto
+            return;
+        }
+
         e.preventDefault();
         navLinks.classList.remove('active');
         
