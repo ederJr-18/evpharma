@@ -57,31 +57,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Modal Logic
 const modal = document.getElementById('contactModal');
-const btnContact = document.getElementById('contactBtn');
-const spansClose = document.getElementsByClassName('close-btn')[0];
+const contactButtons = document.querySelectorAll('.btn-contact, #contactBtn, a[href="#contacto"]');
+const spansClose = document.querySelector('.close-btn');
 
-if (btnContact && modal) {
-    btnContact.onclick = function(e) {
-        e.preventDefault();
-        modal.classList.add('show');
-    }
-}
+contactButtons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        if (modal) {
+            e.preventDefault();
+            modal.classList.add('show');
+        }
+    });
+});
 
 if (spansClose && modal) {
-    spansClose.onclick = function() {
+    spansClose.addEventListener('click', function() {
         modal.classList.remove('show');
-    }
+    });
 }
 
-window.onclick = function(event) {
-    if (event.target == modal) {
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
         modal.classList.remove('show');
     }
-}
-
-document.getElementById('contactForm')?.addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Mensaje enviado. ¡Nos pondremos en contacto pronto!');
-    modal.classList.remove('show');
-    this.reset();
 });
