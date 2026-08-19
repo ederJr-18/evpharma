@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EV PHARMA S.A.S. - Nuestros Productos y Servicios.">
-    <title>EV PHARMA S.A.S | Productos</title>
+    <meta name="description" content="EV PHARMA S.A.S. - Adquiere la mejor atención y calidad en servicios de salud.">
+    <title>Productos | EV PHARMA S.A.S</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/LogoEVPharma-Picsart-BackgroundRemover.png"> 
@@ -19,11 +19,11 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#inicio">Inicio</a></li>
                 <li><a href="productos.html" class="active">Productos</a></li>
                 <li><a href="quienesSomos.html">Quiénes somos</a></li>
-                <li><a href="referencias.html">Referencias</a></li>
-                <li><a href="#contacto" class="btn-contact">Contacto</a></li>
+                <li><a href="index.html#referencias">Referencias</a></li>
+                <li><a href="#contacto" id="contactBtn" class="btn-contact">Contacto</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -57,10 +57,10 @@
                     <span class="badge">Muy pronto en las paginas Html de productos...</span>
                 </div>
             </div>
-        </section> 
+        </section>
     </main>
 
-    <footer id="contacto">
+    <footer>
         <div class="footer-content">
             <div class="logo">
                 <img src="images/LogoEVPharma-Picsart-BackgroundRemover.png" alt="EV Pharma Logo" class="logo-img">
@@ -73,11 +73,12 @@
         </div>
     </footer>
 
-    <!-- Modal de Contacto -->
+    <!-- Contact Modal -->
     <div id="contactModal" class="modal">
-        <div class="modal-content glass-card">
+        <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2>Contáctanos</h2>
+            <p>Déjanos tu mensaje y nos comunicaremos contigo.</p>
             <form id="contactForm">
                 <div class="form-group">
                     <label for="name">Nombre</label>
@@ -91,11 +92,11 @@
                     <label for="message">Mensaje</label>
                     <textarea id="message" rows="4" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
+                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
             </form>
         </div>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
-</html> 
+</html>

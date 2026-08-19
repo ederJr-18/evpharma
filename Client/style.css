@@ -694,3 +694,145 @@ footer p {
         font-size: 1.15rem;
     }
 }
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: var(--text-muted);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-btn:hover {
+    color: var(--primary);
+}
+
+.modal-content h2 {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.modal-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.2);
+}
+
+.modal-content .btn {
+    width: 100%;
+}
+
+/* MUY PRONTO SECTION */
+.muy-pronto {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10rem 5% 5rem;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--white) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.muy-pronto h1,
+.muy-pronto p,
+.muy-pronto div:not(.blob-bg) {
+    position: relative;
+    z-index: 2;
+}
+
+.muy-pronto h1 {
+    font-size: 4.5rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.muy-pronto .highlight {
+    color: var(--primary);
+    background: -webkit-linear-gradient(45deg, var(--primary), var(--primary-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.muy-pronto p {
+    font-size: 1.25rem;
+    color: var(--text-main);
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
